@@ -19,12 +19,18 @@
 ;;   (add-hook 'after-save-hook 'cssfmt-after-save)
 ;;; Code:
 
+(defcustom cssfmt-command "cssfmt"
+  "The 'cssfmt' command."
+  :type 'string)
+
+
+(gofmt-before-save)
 ;;;###autoload
 (defun cssfmt ()
   "Format the current buffer according to the cssfmt tool."
   (interactive)
   (save-excursion
-    (call-process "cssfmt" nil nil nil (buffer-file-name (current-buffer)))
+    (call-process cssfmt-command nil nil nil (buffer-file-name (current-buffer)))
     (revert-buffer   t t)))
 
 ;;;###autoload
