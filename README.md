@@ -3,6 +3,14 @@ An emacs interface for [cssfmt](https://github.com/morishitter/cssfmt), gofmt in
 
 # Installation
 
+Install cssfmt
+
+```
+npm install -g cssfmt
+```
+
+then
+
 ```
 M-x install-package RET cssfmt
 ```
