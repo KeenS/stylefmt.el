@@ -12,13 +12,15 @@ npm install -g cssfmt
 then
 
 ```
-M-x install-package RET cssfmt
+M-x cssfmt-enable-on-save
 ```
 
-optinally add to your init.el
+in css editing buffer.
+
+Optinally add to your init.el
 
 ```lisp
-(add-hook 'after-save-hook 'cssfmt-after-save)
+(add-hook 'after-save-hook 'cssfmt-enable-on-save)
 ```
 
 # Usage
