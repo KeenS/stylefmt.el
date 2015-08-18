@@ -23,8 +23,10 @@
   "The 'cssfmt' command."
   :type 'string)
 
+;;;###autoload
 (defun cssfmt ()
   "Format the current buffer according to the cssfmt tool."
+  (interactive)
   (save-excursion
     (call-process cssfmt-command nil nil nil (buffer-file-name (current-buffer)))
     (revert-buffer t t t)))
