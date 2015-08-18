@@ -9,22 +9,10 @@ Install cssfmt
 npm install -g cssfmt
 ```
 
-then
-
-```
-M-x install-package RET cssfmt
-```
-
-optinally add to your init.el
+then add to your init.el
 
 ```lisp
 (add-hook 'after-save-hook 'cssfmt-after-save)
-```
-
-# Usage
-
-```
-M-x cssfmt
 ```
 
 # Example

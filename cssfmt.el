@@ -15,7 +15,6 @@
 ;; 1. install cssfmt. If you have installed npm, just type `npm install -g cssfmt`
 ;; 2 Add your init.el
 ;;   (load "path/to/cssfmt.el)
-;;   ;optional    
 ;;   (add-hook 'after-save-hook 'cssfmt-after-save)
 ;;; Code:
 
