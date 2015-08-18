@@ -19,9 +19,14 @@
 ;;   (add-hook 'css-mode-hook 'cssfmt-enable-on-save)
 ;;; Code:
 
+(defgroup cssfmt nil
+  "'cssfmt' interface."
+  :group 'css)
+
 (defcustom cssfmt-command "cssfmt"
   "The 'cssfmt' command."
-  :type 'string)
+  :type 'string
+  :group 'cssfmt)
 
 (defun cssfmt ()
   "Format the current buffer according to the cssfmt tool."
