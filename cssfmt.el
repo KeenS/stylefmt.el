@@ -15,25 +15,27 @@
 ;; 1. install cssfmt. If you have installed npm, just type `npm install -g cssfmt`
 ;; 2 Add your init.el
 ;;   (load "path/to/cssfmt.el)
-;;   (add-hook 'after-save-hook 'cssfmt-after-save)
+;;   ;optional    
+;;   (add-hook 'css-mode-hook 'cssfmt-enable-on-save)
 ;;; Code:
+
+(defgroup cssfmt nil
+  "'cssfmt' interface."
+  :group 'css)
 
 (defcustom cssfmt-command "cssfmt"
   "The 'cssfmt' command."
-  :type 'string)
+  :type 'string
+  :group 'cssfmt)
 
-
-(gofmt-before-save)
-;;;###autoload
 (defun cssfmt ()
   "Format the current buffer according to the cssfmt tool."
-  (interactive)
   (save-excursion
     (call-process cssfmt-command nil nil nil (buffer-file-name (current-buffer)))
-    (revert-buffer   t t)))
+    (revert-buffer t t t)))
 
 ;;;###autoload
-(defun cssfmt-after-save ()
+(defun cssfmt-enable-on-save ()
   "Add this to .emacs to run cssfmt on the current buffer when saving:
  (add-hook 'after-save-hook 'cssfmt-after-save).
 
@@ -41,7 +43,7 @@ Note that this will cause css-mode to get loaded the first time
 you save any file, kind of defeating the point of autoloading."
 
   (interactive)
-  (when (member major-mode '(scss-mode less-css-mode stylus-mode css-mode)) (cssfmt)))
+  (add-hook 'after-save-hook 'cssfmt nil t))
 
 (provide 'cssfmt)
 ;;; cssfmt.el ends here
