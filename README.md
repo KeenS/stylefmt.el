@@ -1,18 +1,18 @@
-# cssfmt.el
-An emacs interface for [cssfmt](https://github.com/morishitter/cssfmt), gofmt inspired css code formatter.
+# stylefmt.el
+An emacs interface for [stylefmt](https://github.com/morishitter/stylefmt), gofmt inspired style code formatter.
 
 # Installation
 
-Install cssfmt
+Install stylefmt
 
 ```
-npm install -g cssfmt
+npm install -g stylefmt
 ```
 
 then
 
 ```
-M-x cssfmt-enable-on-save
+M-x stylefmt-enable-on-save
 ```
 
 in css editing buffer.
@@ -20,13 +20,13 @@ in css editing buffer.
 Optinally add to your init.el
 
 ```lisp
-(add-hook 'after-save-hook 'cssfmt-enable-on-save)
+(add-hook 'after-save-hook 'stylefmt-enable-on-save)
 ```
 
 # Example
 
 
-```css
+```style
       @media screen and (    min-width :699px)
  {.foo    +       .bar,.hoge{
     font-size   :12px      !   important   ;  ~       .fuga     {
@@ -48,7 +48,7 @@ Optinally add to your init.el
 
 yields
 
-```css
+```style
 @media screen and (min-width: 699px) {
   .foo + .bar,
   .hoge {
