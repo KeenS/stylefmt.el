@@ -25,7 +25,7 @@
 ;; 2 Add your init.el
 ;;   (load "path/to/stylefmt.el)
 ;;   ;optional    
-;;   (add-hook 'style-mode-hook 'stylefmt-enable-on-save)
+;;   (add-hook 'css-mode-hook 'stylefmt-enable-on-save)
 ;;; Code:
 
 (defgroup stylefmt nil

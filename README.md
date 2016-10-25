@@ -20,7 +20,7 @@ in css editing buffer.
 Optinally add to your init.el
 
 ```lisp
-(add-hook 'after-save-hook 'stylefmt-enable-on-save)
+(add-hook 'css-mode-hook 'stylefmt-enable-on-save)
 ```
 
 # Example
